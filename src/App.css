@@ -4,15 +4,24 @@
   box-sizing: border-box;
 }
 
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  height: 100%;
 }
 
 .navbar {
   padding: 15px 20px;
   border-bottom: 1px solid #ddd;
+  flex-shrink: 0;
 }
 
 .navbar ul {
@@ -21,16 +30,18 @@
   justify-content: space-between;
   align-items: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar ul li {
   padding: 5px 10px;
 }
 
-/* Main content wrapper - you need this */
 .main-content {
   display: flex;
   flex: 1;
+  height: 100%;
 }
 
 .sidebar {
@@ -38,36 +49,45 @@
   padding: 20px 0;
   border-right: 1px solid #ddd;
   flex-shrink: 0;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar ul {
   display: flex;
   flex-direction: column;
   list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1; /* Takes all available space */
+  justify-content: flex-start; /* Align items from top */
+  gap: 5px;
+}
+
+/* Push logout to bottom */
+.sidebar ul li:last-child {
+  margin-top: auto;
 }
 
 .sidebar ul a {
   display: block;
   padding: 12px 25px;
   text-decoration: none;
-  color: inherit;
+  color: #333;
 }
 
 .sidebar ul a:hover {
-  background-color: #f5f5f5;
+  background-color: #e9ecef;
 }
 
 .content-area {
   flex: 1;
   padding: 20px;
-}
-
-.navbar a, .sidebar a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.navbar li, .sidebar li {
-  list-style: none;
+  background-color: #fff;
+  min-height: 100vh;
+  overflow-y: auto;
 }

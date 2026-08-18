@@ -1,17 +1,19 @@
+import { Link } from 'react-router-dom';
+
 function Sidebar() {
-    return(
+    return (
         <div className="sidebar">
             <ul>
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/tasks">Tasks</a></li>
-                <li><a href="/subjects">Subjects</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/achievements">Achievements</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/settings">Settings</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><Link to="/dashboard">Dashboard</Link></li>
+                <li><Link to="/tasks">Tasks</Link></li>
+                <li><Link to="/subjects">Subjects</Link></li>
+                <li><Link to="/projects">Projects</Link></li>
+                <li><Link to="/achievements">Achievements</Link></li>
+                <li><Link to="/profile">Profile</Link></li>
+                <li><Link to="/settings">Settings</Link></li>
+                <li className="logout-item"><Link to="/logout">Logout</Link></li>
             </ul>
         </div>
     );
 }
-export default Sidebar;
+export default Sidebar;                
