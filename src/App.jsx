@@ -2,7 +2,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { useState, useEffect } from 'react';
 import Sidebar from "./components/layout/sidebar";
 import Navbar from "./components/layout/navbar";
+import Dashboard from "./components/pages/dashboard";
+import Tasks from "./components/pages/tasks";
 import './App.css'; 
+import './styles/dashboard.css';
+import './styles/tasks.css';
 
 function App() {
     return (
@@ -14,8 +18,8 @@ function App() {
                     <div className="content-area">
                         <Routes>
                             <Route path="/" element={<Navigate to="/dashboard" />} />
-                            <Route path="/dashboard" element={<h1>Dashboard Page</h1>} />
-                            <Route path="/tasks" element={<h1>Tasks Page</h1>} />
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route path="/tasks" element={<Tasks />} />
                             <Route path="/subjects" element={<h1>Subjects Page</h1>} />
                             <Route path="/projects" element={<h1>Projects Page</h1>} />
                             <Route path="/achievements" element={<h1>Achievements Page</h1>} />
